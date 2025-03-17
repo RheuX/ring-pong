@@ -8,5 +8,6 @@ RingPong
 
 ### Steps on how to train the AI on godot live simulation:
 - [Optional] Setup a Python environment (I made a script on root called `rl`, check it later)
-- `pip3 install godot-rl`
-- 
+- install `godot-rl`
+- download [stable_baseline3](https://github.com/edbeeching/godot_rl_agents/blob/main/examples/stable_baselines3_example.py) and run it
+- after the prompt, play the godot editor
