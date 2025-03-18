@@ -1,6 +1,8 @@
 extends RigidBody3D
 
 @export var speed := 2.0
+enum BallState { VALID, ERROR }
+var current_state = BallState.VALID
 
 func reset():
 	position = Vector3.ZERO
