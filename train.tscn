@@ -35,5 +35,6 @@ current = true
 [node name="Sync" type="Node" parent="."]
 script = ExtResource("2_lomod")
 control_mode = 2
+speed_up = 3.0
 onnx_model_path = "model.onnx"
 metadata/_custom_type_script = "uid://ld20hl06vsf3"

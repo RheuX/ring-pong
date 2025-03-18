@@ -10,4 +10,10 @@ RingPong
 - [Optional] Setup a Python environment (I made a script on root called `rl`, check it later)
 - install `godot-rl`
 - download [stable_baseline3](https://github.com/edbeeching/godot_rl_agents/blob/main/examples/stable_baselines3_example.py) and run it
+- go to the directory, use `python stable_baselines3_example.py --timesteps=100_000 --onnx_export_path=model.onnx --save_model_path=model.zip --save_checkpoint_frequency=20_000 --experiment_name=exp1`
 - after the prompt, play the godot editor
+
+### After training (how to play the model you've trained)
+- Go to sync in train.tscn, and change the control mode to `Onnx Inference`
+- Input the `model` name in the Onnx Model Input Field (default is `model.onnx`)
+- Make sure that the `model.onnx` is on the directory, and just run the godot editor

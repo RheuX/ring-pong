@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dvcu775n18kyr"]
 
-[ext_resource type="Script" uid="uid://dhxi8v0cnodg6" path="res://Player.gd" id="1_wnmni"]
-[ext_resource type="Script" uid="uid://c41ij4govs73u" path="res://controller.gd" id="2_onrkg"]
+[ext_resource type="Script" uid="uid://4y0dgfvvtuaj" path="res://Player.gd" id="1_wnmni"]
+[ext_resource type="Script" uid="uid://d0fiq3m5bqmgm" path="res://controller.gd" id="2_onrkg"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_f8u8m"]
 size = Vector3(2, 0.1, 0.1)

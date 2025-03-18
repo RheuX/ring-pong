@@ -1,9 +1,9 @@
 [gd_scene load_steps=17 format=3 uid="uid://bl1jvuhhjuhlc"]
 
-[ext_resource type="Script" uid="uid://bvr3poaymcj0" path="res://game.gd" id="1_2us7j"]
+[ext_resource type="Script" uid="uid://cnbkrfgayoeln" path="res://game.gd" id="1_2us7j"]
 [ext_resource type="Texture2D" uid="uid://df34a0hiq32m4" path="res://assets/peppermint_powerplant_2_1k.hdr" id="1_jqclb"]
 [ext_resource type="PackedScene" uid="uid://dvcu775n18kyr" path="res://player.tscn" id="3_4cer5"]
-[ext_resource type="Script" uid="uid://cuf3paaak6rgp" path="res://ball.gd" id="4_1kvpt"]
+[ext_resource type="Script" uid="uid://13gpob0c8aoa" path="res://ball.gd" id="4_1kvpt"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_r6kij"]
 panorama = ExtResource("1_jqclb")
@@ -50,7 +50,7 @@ radius = 0.1
 height = 0.2
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_fc0e3"]
-viewport_path = NodePath("Sprite3D/SubViewport")
+viewport_path = NodePath("TextSprite/SubViewport")
 
 [node name="Game" type="Node3D"]
 script = ExtResource("1_2us7j")
@@ -96,19 +96,24 @@ shape = SubResource("SphereShape3D_v5ufm")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ball"]
 mesh = SubResource("SphereMesh_bbjcb")
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 1.08635, 1.67924, 0, -1.67924, 1.08635, 1.32544, 0.647795, -3.32185)
+[node name="TextSprite" type="Sprite3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, -0.374894, 4.98593, 0, -4.98593, -0.374894, 3.43688, 0.647795, -3.43266)
 texture = SubResource("ViewportTexture_fc0e3")
 
-[node name="SubViewport" type="SubViewport" parent="Sprite3D"]
+[node name="SubViewport" type="SubViewport" parent="TextSprite"]
 transparent_bg = true
 size = Vector2i(200, 30)
 
-[node name="ScoreLabel" type="Label" parent="Sprite3D/SubViewport"]
+[node name="ScoreLabel" type="Label" parent="TextSprite/SubViewport"]
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Score: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="StateTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
 [connection signal="body_entered" from="Ring" to="." method="_on_ring_body_entered"]
+[connection signal="timeout" from="StateTimer" to="Ball" method="_on_state_timer_timeout"]
