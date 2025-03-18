@@ -25,7 +25,8 @@ During training, I noticed an exploit in the AI’s behavior where it **stuck th
    ```
 ### **Step 2: Running Training**
 1. Download [stable_baselines3_example.py](https://github.com/edbeeching/godot_rl_agents/blob/main/examples/stable_baselines3_example.py).
-2. Navigate to the script's directory and run:
+2. Place the python file on the current directory:
+3. Open the terminal, navigate to the script's directory and run:
    ```sh
    python stable_baselines3_example.py --timesteps=100_000 \
     --onnx_export_path=model.onnx \
@@ -33,7 +34,7 @@ During training, I noticed an exploit in the AI’s behavior where it **stuck th
     --save_checkpoint_frequency=20_000 \
     --experiment_name=exp1
    ```
-3. Once the training starts (they will prompt you to play the godot editor), open Godot Editor to observe
+4. Once the training starts (they will prompt you to play the godot editor), open Godot Editor to observe
 
 ## Playing with Your Trained Model
 1. Open train.tscn in Godot.
@@ -44,7 +45,9 @@ During training, I noticed an exploit in the AI’s behavior where it **stuck th
 
 ## Gameplay Demonstration
 Here’s a quick demo showing the AI in action, including the reward system in real time:
-[Insert Video Here]
+
+[Gameplay Video](https://github.com/user-attachments/assets/2099d028-48fc-433e-a351-f18f91a86dc4)
+
 
 ## Feedback & Contributions
 This is an experimental project as it's my first exposure to Godot and Godot-RL. I’d love to hear your thoughts! Feel free to:
