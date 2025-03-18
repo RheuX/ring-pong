@@ -21,3 +21,12 @@ export_presets.cfg
 # OS-specific files
 .DS_Store
 Thumbs.db
+
+# Ignore the entire .godot directory
+.godot/
+
+# Ignore Godot-specific temp and cache files
+*.godot/
+*.import/
+*.xcframework
+
