@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bl1jvuhhjuhlc"]
+[gd_scene load_steps=17 format=3 uid="uid://bl1jvuhhjuhlc"]
 
 [ext_resource type="Script" uid="uid://bvr3poaymcj0" path="res://game.gd" id="1_2us7j"]
 [ext_resource type="Texture2D" uid="uid://df34a0hiq32m4" path="res://assets/peppermint_powerplant_2_1k.hdr" id="1_jqclb"]
@@ -49,6 +49,9 @@ radius = 0.1
 radius = 0.1
 height = 0.2
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_fc0e3"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
 [node name="Game" type="Node3D"]
 script = ExtResource("1_2us7j")
 
@@ -66,7 +69,7 @@ mesh = SubResource("BoxMesh_081ux")
 [node name="Player" parent="." instance=ExtResource("3_4cer5")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 5, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 5.78846, -0.516506)
 
 [node name="Ring" type="Area3D" parent="."]
 
@@ -92,5 +95,20 @@ shape = SubResource("SphereShape3D_v5ufm")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ball"]
 mesh = SubResource("SphereMesh_bbjcb")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 1.08635, 1.67924, 0, -1.67924, 1.08635, 1.32544, 0.647795, -3.32185)
+texture = SubResource("ViewportTexture_fc0e3")
+
+[node name="SubViewport" type="SubViewport" parent="Sprite3D"]
+transparent_bg = true
+size = Vector2i(200, 30)
+
+[node name="ScoreLabel" type="Label" parent="Sprite3D/SubViewport"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Score: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="body_entered" from="Ring" to="." method="_on_ring_body_entered"]

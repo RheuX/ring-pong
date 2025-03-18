@@ -25,4 +25,6 @@ func _physics_process(delta):
 	rotate_y(movement*delta*rotation_speed)
 
 func _on_area_3d_body_entered(body):
+	get_parent().add_score(1)
 	ai_controller.reward += 1.0
+	
