@@ -1,3 +1,23 @@
-# Godot 4+ specific ignores
-.godot/
-/android/
+# Godot metadata
+.import/
+
+# Godot export templates
+export_presets.cfg
+
+# Godot-generated `.mono` folders (for C# projects)
+.mono/
+
+# Compiled scripts (C# projects)
+*.mono.temp/
+*.csproj
+*.sln
+*.pidb
+*.mdb
+*.pdb
+
+# Editor settings (should be local)
+.editor_settings-*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
